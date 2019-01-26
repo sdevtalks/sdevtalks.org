@@ -2,6 +2,43 @@
 @import "font";
 
 
+nav {
+  width: 100%;
+  position: fixed;
+  height: 128px;
+  background: linear-gradient(#1b1d28, rgba(27, 29, 40, 0.8) 19%, rgba(27, 29, 40, 0));
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.2);
+  padding: 0 10%;
+  ul {
+    display: flex;
+    list-style: none;
+    
+    li {
+      font-family: 'Questrial', sans-serif;
+      font-weight: bold;
+      line-height: 128px;
+      @include font-20;
+      padding-left: 50px;
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+    
+    a {
+      text-decoration: none;
+      
+      &:visited {
+        color: $white;
+      }
+      
+      &:hover {
+        color: $orange;
+        text-shadow: -2px 0px 6px rgba(240, 139, 99, 0.6);
+      }
+    }
+  }
+}
+
 h2 {
   font-family: 'Questrial', sans-serif;
   font-weight: normal;
