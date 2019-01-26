@@ -2,6 +2,31 @@
 @import "font";
 
 
+h2 {
+  font-family: 'Questrial', sans-serif;
+  font-weight: normal;
+  color: $blue;
+  @include font-36;
+  text-shadow: -2px 0px 6px rgba(171, 215, 236, 0.6);
+  position: relative;
+  text-align: center;
+  margin-bottom: 80px;
+  &::after {
+      content: "";
+      position: absolute;
+      left: 40%;
+      right: 40%;
+      border: 3px solid #ABD7EC;
+      border-radius: 50px;
+      box-shadow: -2px 0px 6px rgba(171, 215, 236, 0.6);
+      bottom: -14px;
+    }
+}
+
+.space_box {
+  padding: 150px 0;
+}
+
 .eventCard {
   padding: 34px;
   border-radius: 20px;
@@ -34,18 +59,30 @@
       line-height: 2.0;
     }
   }
+  
+  &_buttonWrapper {
+    margin: 50px 0 36px 0;
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
-.buttom_filled {
+.button_filled {
   display: inline-block;
   background-color: $orange;
-  padding: 20px 40px;
+  padding: 24px 60px;
   color: $white;
   border-radius: 10px;
   font-weight: bold;
   text-decoration: none;
 }
 
-.buttom_outline {
-  
+.button_outline {
+  display: inline-block;
+  border: 1px solid $orange;
+  padding: 24px 60px;
+  color: $orange;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
 }

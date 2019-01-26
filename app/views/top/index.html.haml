@@ -2,6 +2,9 @@
   .topImage
 
   .wrapper 
+  
+    %h2 Upcoming Event
+    
     .eventCard
       = image_tag "sdev_banner@3x.jpg", width: "100%"
       .eventCard_dateTag
@@ -16,6 +19,46 @@
           今回のテーマは「仮説の立て方」。
           %br    	
           サービスのコアコンセプトをすばやく検証するテクニックについてのトークが集まる予定です！
-          
-      =link_to "発表者に応募する", 'https://docs.google.com/forms/d/e/1FAIpQLSf5upwTG8RPt4t0jai3cuESdpgoOJldzUWW4SkI6qHB5Ay_zg/viewform', class: 'buttom_filled'
+      
+      .eventCard_buttonWrapper
+        =link_to "イベントを確認する", 'https://s-dev-talks.connpass.com/event/118037/', class: 'button_outline'
+        =link_to "登壇を希望する", 'https://docs.google.com/forms/d/e/1FAIpQLSf5upwTG8RPt4t0jai3cuESdpgoOJldzUWW4SkI6qHB5Ay_zg/viewform', class: 'button_filled'
+    
+    .space_box
+    
+    %h2 About
+    
+    .vision
+      %h1 
+        すべての
+        %br
+        「サービス開発者」のために
+      %p 
+        s-dev talks は、サービスづくりに関わる人々が「エンジニア」や「デザイナー」といった職種 にとらわれず、「サービス開発者」として交流するための草の根コミュニティです。効果測定、プロトタイピング、組織づくり、各種フレームワークの実践例 etc... といった、サービス開発に関する知見をカジュアルに共有できるコミュニティを目指してつくられました。
+        %br
+        メンバー全員が職種や経歴を超えてサービスについて考え、それを作っていくというスタイルの組織が増えている一方で、そこで得た学びや生まれた疑問について話し合えるようなコミュニティはあまり存在していません。
+        %br
+        この問題を解決するために、私たちは s-dev talks を立ち上げました。
+        %br
+        「サービス開発についてもっと話し合いたい」
+        %br
+        そう感じたことがあるなら s-dev talks があなたの力になれるかもしれません。
+      
+      .vision_container
+        %p 私達が大切にしていること
+        .vision_wrapper
+          .vision_wrapper_label 多様性
+          %p よいサービスをつくるためには、エンジニアリング、デザイン、ディレクション、法務、広報、採用、カスタマーサポート……といった様々な視点を持ったメンバーが、それぞれの強みを持ち寄ることが必要不可欠です。したがって、サービス開発者のコミュニティである s-dev talks も、職種や業界、経歴といった壁を超えて人々が集まる場所になる必要があると考えています。
+        
+        .vision_wrapper
+          .vision_wrapper_label コミュニティ感
+          %p s-dev talks には、サービス開発者が気軽に訪れることができ、運営と参加者がともに楽しみながら学びを得られる場であってほしいと思っています。コミュニティやそれが開催するイベントを十分楽しんでもらうため、「どちらかがゲストでどちらかがホスト」といった構図ではなく「関わっている人たち全員がコミュニティの一員」であるという姿勢で運営を続けていきます。
+        
+        .vision_wrapper
+          .vision_wrapper_label 継続性
+          %p s-dev talks がより多くの価値を生めるように、そしてそれがより多くのサービス開発者のもとに届くように、長く継続して活動するコミュニティでありたいと考えています。そのために、会の理想は大切にしながらも、運営メンバーが楽しく・無理なく関われる範囲や方法で活動を続けていきます。
+    
+    .space_box
+    
+    %h2 Share  
         
