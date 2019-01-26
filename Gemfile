@@ -5,6 +5,7 @@ ruby '2.5.1'
 
 gem 'rails', '~> 5.2.2'
 
+gem 'administrate'
 gem 'haml'
 gem 'haml-rails'
 gem 'jbuilder', '~> 2.5'
