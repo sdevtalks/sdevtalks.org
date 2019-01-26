@@ -2,7 +2,7 @@
 
 class EventsController < ApplicationController
   def index
-    @events = Event.eager_load(:venue).all
+    @events = Event.eager_load(:venue).order(starts_at: :desc)
   end
 
   def show
