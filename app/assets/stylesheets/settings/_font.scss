@@ -1,0 +1,21 @@
+//16px(Browser Default)
+
+@mixin font-12 {
+  font-size: 0.75rem;
+}
+
+@mixin font-14 {
+  font-size: 0.875rem;
+}
+
+@mixin font-16 {
+  font-size: 1rem;
+}
+
+@mixin font-18 {
+  font-size: 1.125rem;
+}
+
+@mixin font-24 {
+  font-size: 1.5rem;
+}

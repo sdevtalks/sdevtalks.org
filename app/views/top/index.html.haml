@@ -1,5 +1,21 @@
-%div(style="background-color: black")
-  %h1(style="color: white; text-align: center")
-    Wellcome to sdevtalks.org
+.top_controller 
+  .topImage
 
-  = image_tag "s-dev-logo-square_vertical.jpg", width: "100%"
+  .wrapper 
+    .eventCard
+      = image_tag "sdev_banner@3x.jpg", width: "100%"
+      .eventCard_dateTag
+        %p 2019年2月19日 19:00~22:00
+      .eventCard_title
+        %h3 s-dev talks 〜サービス開発勉強会〜「仮説の立て方」
+      .eventCard_place
+        %p in 株式会社クラウドワークス 本社  
+      %hr
+      .eventCard_description
+        %p 
+          今回のテーマは「仮説の立て方」。
+          %br    	
+          サービスのコアコンセプトをすばやく検証するテクニックについてのトークが集まる予定です！
+          
+      =link_to "発表者に応募する", 'https://docs.google.com/forms/d/e/1FAIpQLSf5upwTG8RPt4t0jai3cuESdpgoOJldzUWW4SkI6qHB5Ay_zg/viewform', class: 'buttom_filled'
+        

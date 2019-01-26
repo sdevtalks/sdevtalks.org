@@ -1,0 +1,51 @@
+@import "color";
+@import "font";
+
+
+.eventCard {
+  padding: 34px;
+  border-radius: 20px;
+  background-color: $background_color;
+  
+  &_dateTag {
+    background-color: $dark_blue;
+    padding: 8px 8px;
+    border-radius: 6px;
+    margin-top: 16px;
+    display: inline-block;
+    p {
+      display: inline;
+      @include font-14;
+    }
+  }
+  
+  &_title {
+    padding: 12px 0;
+    h3 {
+      @include font-24;
+    }
+  }
+  hr {
+    margin: 30px 0;
+  }
+  
+  &_description {
+    p {
+      line-height: 2.0;
+    }
+  }
+}
+
+.buttom_filled {
+  display: inline-block;
+  background-color: $orange;
+  padding: 20px 40px;
+  color: $white;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.buttom_outline {
+  
+}
