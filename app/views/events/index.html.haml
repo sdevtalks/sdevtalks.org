@@ -1,0 +1,5 @@
+%ul
+  - @events.each do |event|
+    %li
+      %p= event.title
+      %p= event.venue.name
