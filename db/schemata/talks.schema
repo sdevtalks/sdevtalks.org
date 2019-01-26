@@ -1,7 +1,12 @@
 create_table "talks", force: :cascade do |t|
   t.string  "title",      null: false
   t.integer "event_id",   null: false
-  t.integer "speaker_id", null: false
+  t.string  "speaker_name",  null: false
+  t.string  "speaker_email", null: false
+  t.string  "speaker_sns_id"
+  t.string  "speaker_sns_url"
+  t.string  "speaker_belongs"
+  t.string  "speaker_role"
   t.string  "slide_url"
   t.string  "video_url"
 
@@ -9,4 +14,3 @@ create_table "talks", force: :cascade do |t|
 end
 
 add_foreign_key "talks", "events"
-add_foreign_key "talks", "speakers"
