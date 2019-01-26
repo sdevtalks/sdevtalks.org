@@ -1,0 +1,2 @@
+require 'venues.schema'
+require 'events.schema'
