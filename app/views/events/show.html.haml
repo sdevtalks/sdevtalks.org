@@ -1,3 +1,10 @@
-%h1= @event.title
-
-%p= @event.description
+.eventCard
+  = image_tag "sdev_banner@3x.jpg", width: "100%"
+  .eventCard_dateTag
+    %p= "#{@event.starts_at.strftime("%Y年%m月%d日 %H:%M")}~#{@event.ends_at.strftime("%H:%M")}"
+  .eventCard_title
+    %h3= "s-dev talks 〜サービス開発勉強会〜「#{@event.title}」"
+  .eventCard_place
+    %p= "in #{@event.venue.name}"
+  .eventCard_description
+    %p= @event.description
