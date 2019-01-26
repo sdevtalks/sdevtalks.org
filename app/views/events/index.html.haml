@@ -14,5 +14,6 @@
         %p= event.description
       .eventCard_buttonWrapper
         = link_to "イベントを確認する", event_path(slug: event.slug), class: "button_outline"
-        = link_to "登壇を希望する", 'https://docs.google.com/forms/d/e/1FAIpQLSf5upwTG8RPt4t0jai3cuESdpgoOJldzUWW4SkI6qHB5Ay_zg/viewform', class: 'button_filled'
-      
+        - unless event.ended?
+          = link_to "登壇を希望する", 'https://docs.google.com/forms/d/e/1FAIpQLSf5upwTG8RPt4t0jai3cuESdpgoOJldzUWW4SkI6qHB5Ay_zg/viewform', class: 'button_filled'
+
