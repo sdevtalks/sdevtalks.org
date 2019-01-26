@@ -1,4 +1,8 @@
 require 'venues.schema'
 require 'events.schema'
+require 'proposals.schema'
+require 'talks.schema'
+require 'proposals_to_talks.schema'
+require 'speakers.schema'
 
 require "seed_migration_data_migrations.schema"

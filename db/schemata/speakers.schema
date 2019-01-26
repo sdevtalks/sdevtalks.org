@@ -1,0 +1,10 @@
+create_table "speakers", force: :cascade do |t|
+  t.string "name",  null: false
+  t.string "email", null: false
+  t.string "sns_id"
+  t.string "sns_url"
+  t.string "belongs"
+  t.string "role"
+
+  t.timestamps
+end
