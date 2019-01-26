@@ -13,4 +13,17 @@ Rails.application.routes.draw do
       root to: "top#index"
     end
   end
+
+  #
+  # Administrate
+  #
+
+  unless Rails.env.production?
+    namespace :database do
+      root to: "events#index"
+
+      resources :events
+      resources :venues
+    end
+  end
 end
