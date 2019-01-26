@@ -1,9 +1,12 @@
 create_table "events", force: :cascade do |t|
-  t.string   "title",       null: false
-  t.text     "description", null: false
-  t.integer  "venue_id",    null: false
-  t.datetime "starts_at",   null: false
-  t.datetime "ends_at",     null: false
+  t.string   "title",        null:   false
+  t.text     "description",  null:   false
+  t.string   "pretty_title", null:   false
+  t.string   "key",          null:   false
+  t.integer  "venue_id",     null:   false
+  t.datetime "starts_at",    null:   false
+  t.datetime "ends_at",      null:   false
+  t.index    "pretty_title", unique: true
 
   t.timestamps
 end
