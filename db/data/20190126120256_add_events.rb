@@ -7,12 +7,13 @@ class AddEvents < SeedMigration::Migration
       crowdworks = Venue.create!(name: "クラウドワークス株式会社", address: "東京都渋谷区恵比寿4丁目20-3 恵比寿ガーデンプレイスタワー6階", description: "")
 
       CSV.foreach(Rails.root.join("db/data/20190126_events.csv")) do |row|
-        Event.create!(
+        Event.create_with_key!(
           title: row[0],
-          venue_id: row[1] == "クックパッド" ? cookpad.id : crowdworks.id,
-          starts_at: row[2],
-          ends_at: row[3],
-          description: row[4],
+          pretty_title: row[1],
+          venue_id: row[2] == "クックパッド" ? cookpad.id : crowdworks.id,
+          starts_at: row[3],
+          ends_at: row[4],
+          description: row[5],
         )
       end
     end
