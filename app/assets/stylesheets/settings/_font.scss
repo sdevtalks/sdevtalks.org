@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial');
+
 //16px(Browser Default)
 
 @mixin font-12 {
@@ -16,6 +18,18 @@
   font-size: 1.125rem;
 }
 
+@mixin font-20 {
+  font-size: 1.25rem;
+}
+
 @mixin font-24 {
   font-size: 1.5rem;
+}
+
+@mixin font-36 {
+  font-size: 2.25rem;
+}
+
+@mixin font-60 {
+  font-size: 3.75rem;
 }
