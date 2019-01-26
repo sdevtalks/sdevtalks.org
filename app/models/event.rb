@@ -18,4 +18,8 @@ class Event < ApplicationRecord
   def generate_key
     self.key = SecureRandom.alphanumeric(6)
   end
+
+  def ended?
+    Time.zone.now > self.ends_at
+  end
 end
