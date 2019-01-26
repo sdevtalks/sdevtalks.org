@@ -3,3 +3,5 @@
     %li
       %p= link_to event.title, event_path(event.slug)
       %p= event.venue.name
+      %p= event.starts_at
+      %p= event.ends_at
