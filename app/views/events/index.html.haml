@@ -9,3 +9,4 @@
       %p= "in #{event.venue.name}"
     .eventCard_description
       %p= event.description
+    = link_to "イベントを確認する", event_path(slug: event.slug), class: "buttom_filled"
