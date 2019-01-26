@@ -1,2 +1,4 @@
 require 'venues.schema'
 require 'events.schema'
+
+require "seed_migration_data_migrations.schema"

@@ -1,0 +1,5 @@
+create_table :seed_migration_data_migrations do |t|
+  t.string :version
+  t.integer :runtime
+  t.datetime :migrated_on
+end
