@@ -1,10 +1,18 @@
-.eventCard
-  = image_tag "sdev_banner@3x.jpg", width: "100%"
-  .eventCard_dateTag
-    %p= "#{@event.starts_at.strftime("%Y年%m月%d日 %H:%M")}~#{@event.ends_at.strftime("%H:%M")}"
-  .eventCard_title
-    %h3= "s-dev talks 〜サービス開発勉強会〜「#{@event.title}」"
-  .eventCard_place
-    %p= "in #{@event.venue.name}"
-  .eventCard_description
-    %p= @event.description
+.showEvents
+  .showEvents_topImage
+  
+  .eventTopics
+    .eventTopics_wrapper
+      .eventTopics_inner
+        .eventTopics_title
+          %h3= "s-dev talks 〜サービス開発勉強会〜「#{@event.title}」"
+        .eventTopics_place
+          %p= "in #{@event.venue.name}"
+        .eventTopics_dateTag
+          %p= "#{@event.starts_at.strftime("%Y年%m月%d日 %H:%M")}~#{@event.ends_at.strftime("%H:%M")}"
+        %hr
+        .eventTopics_description
+          %p= @event.description
+        .eventTopics_apply
+          = link_to "イベントに参加する", 'https://s-dev-talks.connpass.com/event/118037/', class: 'button_filled_with_shadow'
+          %p ※connpassへ遷移します

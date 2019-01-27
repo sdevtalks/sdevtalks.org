@@ -1,0 +1,79 @@
+@import "settings/util";
+
+.showEvents {
+  .showEvents_topImage {
+    width: 100vw;
+    height: auto;
+    min-height: 70vh;
+    background-size: cover;
+    background-position: center;
+    background-image: image-url('sdev_ogp@3x.jpg');
+  }
+  
+  .eventTopics {
+    position: relative;
+    &_wrapper {
+      background-color: $background_color;
+      width: 980px;
+      position: absolute;
+      top: -10vh;
+      left: 0;
+      right: 0;
+      margin: auto;
+      text-align: center;  
+      border-radius: 20px;
+    }
+    
+    &_inner {
+      width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+    }
+    
+    &_title {
+      @include font-24;
+    }
+    
+    &_place {
+      padding: 20px 0px;
+    }
+    
+    &_dateTag {
+      background-color: $dark_blue;
+      padding: 8px 8px;
+      border-radius: 6px;
+      display: inline-block;
+      p {
+        display: inline;
+        @include font-14;
+        @media screen and (max-width: 479px) {
+          @include font-12;
+          font-weight: lighter;
+        }
+      }
+    }
+    
+    hr {
+      margin: 30px 0;
+    }
+    
+    &_description {
+      p {
+        line-height: 2.0;
+        @media screen and (max-width: 479px) {
+          line-height: 1.9;
+          font-weight: lighter;
+        }
+      }
+    }
+    
+    &_apply {
+      margin-top: 40px;
+      p {
+        @include font-12;
+        margin-top: 14px;
+      }
+    }
+    
+  }
+}
