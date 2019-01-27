@@ -10,8 +10,15 @@
     background-image: image-url('sdev_ogp@3x.jpg');
   }
   
+  .showEvents_container {
+    @media screen and (max-width: 479px) {
+      padding: 0 18px 80px 18px;
+    }
+  }
+  
   .eventTopics {
     position: relative;
+    min-height: 500px;
     &_wrapper {
       background-color: $background_color;
       width: 980px;
@@ -22,20 +29,39 @@
       margin: auto;
       text-align: center;  
       border-radius: 20px;
+      @media screen and (max-width: 479px) {
+        width: 90%;
+        box-sizing: border-box;
+        top: -15vh;
+        border-radius: 10px;
+      }
     }
     
     &_inner {
       width: 800px;
       margin: 0 auto;
       padding: 40px;
+      @media screen and (max-width: 479px) {
+        width: 100%;
+        padding: 30px 12px;
+        box-sizing: border-box;
+      }
     }
     
     &_title {
       @include font-24;
+      @media screen and (max-width: 479px) {
+        @include font-18;
+        line-height: 1.7;
+      }
     }
     
     &_place {
       padding: 20px 0px;
+      @media screen and (max-width: 479px) {
+        @include font-14;
+        font-weight: lighter;
+      }
     }
     
     &_dateTag {
@@ -61,8 +87,9 @@
       p {
         line-height: 2.0;
         @media screen and (max-width: 479px) {
-          line-height: 1.9;
+          line-height: 1.7;
           font-weight: lighter;
+          text-align: left;
         }
       }
     }
@@ -74,6 +101,55 @@
         margin-top: 14px;
       }
     }
+  }
+  
+  .comingsoon_maintalks_wrapper {
+    @include font-60;
+    text-align: center;
+    padding: 100px 0 300px 0;
+    @media screen and (max-width: 479px) {
+      line-height: 1.7;
+    }
+  }
+  
+  .before_maintalks_wrapper {
+    width: 980px;
+    margin: 0 auto;
     
+    li {
+      margin-bottom: 60px;
+    }
+    
+    .mainSpeaker {
+      &_title {
+        @include font-24;
+        font-weight: bold;
+      }
+      
+      &_bio {
+        @include font-14;
+        padding: 20px 0 10px 0;
+      }
+      
+      &_name {
+        @include font-14;
+      }
+      
+      &_desc {
+        @include font-16;
+        line-height: 1.8;
+        padding-top: 20px;
+      }
+    }
+  }
+  
+  .access_place {
+    @include font-24;
+    text-align: center;
+    font-weight: bold;
+    
+    @media screen and (max-width: 479px) {
+      @include font-20;
+    }
   }
 }
