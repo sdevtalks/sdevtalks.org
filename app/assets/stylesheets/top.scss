@@ -72,7 +72,29 @@ body {
         text-align: left;
       }
     }
+  }
+
+  .hashtag {
+    text-align: center;
+    &_label {
+      text-shadow: -2px 0px 6px rgba(171, 215, 236, 0.6);
+      color: $blue;
+      @include font-18;
+    }
     
+    p {
+      @include font-36;
+      font-weight: bold;
+      margin-top: 20px;
+    }
     
+    ul {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+      li:last-child {
+        margin-left: 40px;
+      }
+    }
   }
 }

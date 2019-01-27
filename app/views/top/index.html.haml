@@ -4,13 +4,13 @@
     %ul
       %li=link_to "About", '/'
       %li=link_to "Events", '/events'
-      
+
   .topImage
 
   .wrapper 
-  
+
     %h2 Upcoming Event
-    
+
     .eventCard
       = image_tag "sdev_banner@3x.jpg", width: "100%"
       .eventCard_dateTag
@@ -25,15 +25,15 @@
           今回のテーマは「仮説の立て方」。
           %br    	
           サービスのコアコンセプトをすばやく検証するテクニックについてのトークが集まる予定です！
-      
+
       .eventCard_buttonWrapper
         =link_to "イベントを確認する", 'https://s-dev-talks.connpass.com/event/118037/', class: 'button_outline'
         =link_to "登壇を希望する", 'https://docs.google.com/forms/d/e/1FAIpQLSf5upwTG8RPt4t0jai3cuESdpgoOJldzUWW4SkI6qHB5Ay_zg/viewform', class: 'button_filled'
-    
+
     .space_box
-    
+
     %h2 About
-    
+
     .vision
       %h1 
         すべての
@@ -49,22 +49,29 @@
         「サービス開発についてもっと話し合いたい」
         %br
         そう感じたことがあるなら s-dev talks があなたの力になれるかもしれません。
-      
+
       .vision_container
         %p 私達が大切にしていること
         .vision_wrapper
           .vision_wrapper_label 多様性
           %p よいサービスをつくるためには、エンジニアリング、デザイン、ディレクション、法務、広報、採用、カスタマーサポート……といった様々な視点を持ったメンバーが、それぞれの強みを持ち寄ることが必要不可欠です。したがって、サービス開発者のコミュニティである s-dev talks も、職種や業界、経歴といった壁を超えて人々が集まる場所になる必要があると考えています。
-        
+
         .vision_wrapper
           .vision_wrapper_label コミュニティ感
           %p s-dev talks には、サービス開発者が気軽に訪れることができ、運営と参加者がともに楽しみながら学びを得られる場であってほしいと思っています。コミュニティやそれが開催するイベントを十分楽しんでもらうため、「どちらかがゲストでどちらかがホスト」といった構図ではなく「関わっている人たち全員がコミュニティの一員」であるという姿勢で運営を続けていきます。
-        
+
         .vision_wrapper
           .vision_wrapper_label 継続性
           %p s-dev talks がより多くの価値を生めるように、そしてそれがより多くのサービス開発者のもとに届くように、長く継続して活動するコミュニティでありたいと考えています。そのために、会の理想は大切にしながらも、運営メンバーが楽しく・無理なく関われる範囲や方法で活動を続けていきます。
-    
+
     .space_box
-    
-    %h2 Share  
+
+    %h2 Share
+
+    .hashtag
+      .hashtag_label ハッシュタグ
+      %p #sdevtalks
+      %ul
+        %li= link_to image_tag('facebook.png', width:75), 'http://www.facebook.com/share.php?u=https://sdevtalks.org/'
+        %li= link_to image_tag('twitter.png', width:75), 'http://twitter.com/share?url=https://sdevtalks.org/&hashtags=sdevtalks', data:{ size:'large' }
         
