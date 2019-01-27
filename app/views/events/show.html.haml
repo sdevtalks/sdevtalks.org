@@ -19,8 +19,12 @@
           
   .showEvents_container
     %h2 Main Talks
-    .comingsoon_maintalks_wrapper
-      %p Coming Soon...
+    - unless @event.ended?
+      .comingsoon_maintalks_wrapper
+        %p Coming Soon...
+    - else 
+      .after_maintalks_wrapper
+        %p 間もなく資料公開予定
     -# .before_maintalks_wrapper
     -#   %ul
     -#     %li
