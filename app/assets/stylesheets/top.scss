@@ -25,7 +25,8 @@ body {
     
     @media screen and (max-width: 680px) {
       width: 100%;
-      padding: 0 12px;
+      padding: 40px 18px;
+      box-sizing: border-box;
     }
   }  
   
@@ -43,12 +44,18 @@ body {
       @include font-60;
       text-align: center;
       line-height: 1.5;
+      @media screen and (max-width: 680px) {
+        @include font-24;
+      }
     }
     
     p {
       @include font-20;
       line-height: 2.0;
       padding: 40px 0;
+      @media screen and (max-width: 680px) {
+        @include font-16;
+      }
     }
     
     &_container {
@@ -61,6 +68,9 @@ body {
         @include font-36;
         text-align: center;
         padding-top:0;
+        @media screen and (max-width: 680px) {
+          @include font-20;
+        }
       }
     }
     
@@ -70,12 +80,18 @@ body {
         @include font-24;
         font-weight: bold;
         margin-bottom: 25px;
+        @media screen and (max-width: 680px) {
+          @include font-16;
+        }
       }
       
       p {
         @include font-16;
         padding: 0;
         text-align: left;
+        @media screen and (max-width: 680px) {
+          @include font-14;
+        }
       }
     }
   }

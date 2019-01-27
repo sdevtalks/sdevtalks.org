@@ -71,6 +71,10 @@ h2 {
   padding: 34px;
   border-radius: 20px;
   background-color: $background_color;
+  @media screen and (max-width: 680px) {
+    padding: 14px;
+    border-radius: 10px;
+  }
   
   &_dateTag {
     background-color: $dark_blue;
@@ -88,6 +92,10 @@ h2 {
     padding: 12px 0;
     h3 {
       @include font-24;
+      @media screen and (max-width: 680px) {
+        @include font-20;
+        line-height: 1.4;
+      }
     }
   }
   hr {
@@ -97,6 +105,9 @@ h2 {
   &_description {
     p {
       line-height: 2.0;
+      @media screen and (max-width: 680px) {
+        line-height: 1.5;
+      }
     }
   }
   
@@ -104,6 +115,9 @@ h2 {
     margin: 50px 0 36px 0;
     display: flex;
     justify-content: space-around;
+    @media screen and (max-width: 680px) {
+      display: block;
+    }
   }
 }
 
@@ -115,14 +129,24 @@ h2 {
   border-radius: 10px;
   font-weight: bold;
   text-decoration: none;
+  text-align: center;
+  @media screen and (max-width: 680px) {
+    margin: 0 auto;
+    display: block;
+    margin-top: 30px;
+  }
 }
 
 .button_outline {
   display: inline-block;
   border: 1px solid $orange;
+  text-align: center;
   padding: 24px 60px;
   color: $orange;
   border-radius: 10px;
   font-weight: bold;
   text-decoration: none;
+  @media screen and (max-width: 680px) {
+    display: block;
+  }
 }
