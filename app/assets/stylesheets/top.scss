@@ -19,10 +19,16 @@ body {
 
 .top_controller {
   .wrapper {
-    max-width: 800px;
+    width: 800px;
     margin: 0 auto;
     padding: 80px 0;
+    
+    @media screen and (max-width: 680px) {
+      width: 100%;
+      padding: 0 12px;
+    }
   }  
+  
   .topImage {
     width: 100vw;
     height: auto;

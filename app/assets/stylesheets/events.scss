@@ -1,6 +1,8 @@
 .events_controller {
-  width: 800px;
-  margin: 0 auto;
+  .wrapper {
+    width: 800px;
+    margin: 0 auto; 
+  }
   
   .eventCard {
     margin-bottom: 50px;

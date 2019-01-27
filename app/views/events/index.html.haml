@@ -1,19 +1,21 @@
 .events_controller
-  %h2 Events
-  - @events.each do |event|
-    .eventCard
-      = image_tag "sdev_banner@3x.jpg", width: "100%"
-      .eventCard_dateTag
-        %p= "#{event.starts_at.strftime("%Y年%m月%d日 %H:%M")}~#{event.ends_at.strftime("%H:%M")}"
-      .eventCard_title
-        %h3= "s-dev talks 〜サービス開発勉強会〜「#{event.title}」"
-      .eventCard_place
-        %p= "in #{event.venue.name}"
-      %hr
-      .eventCard_description
-        %p= event.description
-      .eventCard_buttonWrapper
-        = link_to "イベントを確認する", event_path(slug: event.slug), class: "button_outline"
-        - unless event.ended?
-          = link_to "登壇を希望する", 'https://docs.google.com/forms/d/e/1FAIpQLSf5upwTG8RPt4t0jai3cuESdpgoOJldzUWW4SkI6qHB5Ay_zg/viewform', class: 'button_filled'
+  .space_box
+  .wrapper
+    %h2 Events
+    - @events.each do |event|
+      .eventCard
+        = image_tag "sdev_banner@3x.jpg", width: "100%"
+        .eventCard_dateTag
+          %p= "#{event.starts_at.strftime("%Y年%m月%d日 %H:%M")}~#{event.ends_at.strftime("%H:%M")}"
+        .eventCard_title
+          %h3= "s-dev talks 〜サービス開発勉強会〜「#{event.title}」"
+        .eventCard_place
+          %p= "in #{event.venue.name}"
+        %hr
+        .eventCard_description
+          %p= event.description
+        .eventCard_buttonWrapper
+          = link_to "イベントを確認する", event_path(slug: event.slug), class: "button_outline"
+          - unless event.ended?
+            = link_to "登壇を希望する", 'https://docs.google.com/forms/d/e/1FAIpQLSf5upwTG8RPt4t0jai3cuESdpgoOJldzUWW4SkI6qHB5Ay_zg/viewform', class: 'button_filled'
 
