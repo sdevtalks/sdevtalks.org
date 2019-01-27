@@ -1,7 +1,12 @@
+require 'validators/spinal_case_validator'
+
 KeyNotGeneratedError = Class.new(StandardError)
 
 class Event < ApplicationRecord
   belongs_to :venue
+
+  validates :pretty_title, presence: true, spinal_case: true
+  validate :validate_duration
 
   scope :upcoming, ->(now) { where("starts_at > ?", now) }
   scope :recently, -> { order(starts_at: :asc) }
@@ -32,5 +37,17 @@ class Event < ApplicationRecord
 
   def formatted_opening_date
     "#{self.starts_at.strftime("%Y年%m月%d日 %H:%M")}~#{self.ends_at.strftime("%H:%M")}"
+  end
+
+  private
+
+  def validate_duration
+    if duration <= 0
+      errors[:base] << "end_at must be greater than start_at"
+    end
+
+    if duration > 24.hours
+      errors[:base] << "Too long event. Everyone will be exhausted."
+    end
   end
 end
