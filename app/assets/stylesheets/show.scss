@@ -112,6 +112,15 @@
     }
   }
   
+  .after_maintalks_wrapper {
+    @include font-36;
+    text-align: center;
+    padding: 100px 0 300px 0;
+    @media screen and (max-width: 479px) {
+      line-height: 1.7;
+    }
+  }
+  
   .before_maintalks_wrapper {
     width: 980px;
     margin: 0 auto;
