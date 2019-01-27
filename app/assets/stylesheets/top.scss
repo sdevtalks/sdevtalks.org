@@ -22,7 +22,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 80px 0;
-  }  
+  }
   .topImage {
     width: 100vw;
     height: auto;
@@ -31,33 +31,33 @@ body {
     background-position: center;
     background-image: image-url('sdev_logo_motion_image.gif');
   }
-  
+
   .vision{
     h1 {
       @include font-60;
       text-align: center;
       line-height: 1.5;
     }
-    
+
     p {
       @include font-20;
       line-height: 2.0;
       padding: 40px 0;
     }
-    
+
     &_container {
       background-color: $background_color;
       padding: 30px;
       border-radius: 20px;
       margin-top: 40px;
-      
+
       p {
         @include font-36;
         text-align: center;
         padding-top:0;
       }
     }
-    
+
     &_wrapper {
       margin-bottom: 40px;
       &_label {
@@ -65,14 +65,14 @@ body {
         font-weight: bold;
         margin-bottom: 25px;
       }
-      
+
       p {
         @include font-16;
         padding: 0;
         text-align: left;
       }
     }
-    
-    
+
+
   }
 }
