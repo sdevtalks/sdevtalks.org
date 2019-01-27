@@ -3,7 +3,7 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     = favicon_link_tag('favicon.ico')
-    = display_meta_tags site: "s-dev talks"
+    = display_meta_tags(default_meta_tags)
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all'
