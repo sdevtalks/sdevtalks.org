@@ -8,22 +8,18 @@ Rails.application.routes.draw do
   # Admin
   #
 
-  unless Rails.env.production?
-    namespace :admin do
-      root to: "top#index"
-    end
+  namespace :admin do
+    root to: "top#index"
   end
 
   #
   # Administrate
   #
 
-  unless Rails.env.production?
-    namespace :database do
-      root to: "events#index"
+  namespace :database do
+    root to: "events#index"
 
-      resources :events
-      resources :venues
-    end
+    resources :events
+    resources :venues
   end
 end

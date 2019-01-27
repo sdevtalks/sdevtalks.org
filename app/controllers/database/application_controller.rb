@@ -9,7 +9,11 @@ module Database
     before_action :authenticate_admin
 
     def authenticate_admin
-      # TODO Add authentication logic here.
+      if Rails.env.production?
+        authenticate_or_request_with_http_basic do |username, password|
+          username == 'admin' && password == ENV['BASIC_AUTH_PASSWORD']
+        end
+      end
     end
 
     # Override this value to specify the number of elements to display at a time
