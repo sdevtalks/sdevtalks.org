@@ -63,6 +63,10 @@ body {
       padding: 30px;
       border-radius: 20px;
       margin-top: 40px;
+      @media screen and (max-width: 680px) {
+        padding: 14px;
+        border-radius: 10px;
+      }
       
       p {
         @include font-36;
