@@ -1,6 +1,8 @@
 !!!
 %html
   %head
+    - if Rails.env.production?
+      = render 'layouts/google_analytics'
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     = favicon_link_tag('favicon.ico')
     = display_meta_tags(default_meta_tags)
