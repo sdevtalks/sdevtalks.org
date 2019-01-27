@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+      <loc><%= @url_base %></loc>
+   </url>
+   <url>
+      <loc><%= @url_base %>/events</loc>
+   </url>
+  <% @events.each do |event| %>
+    <url>
+      <loc><%= @url_base %>/events/<%= event.slug %></loc>
+    </url>
+   <% end %>
+</urlset>
