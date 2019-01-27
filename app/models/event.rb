@@ -1,8 +1,11 @@
+require 'validators/spinal_case_validator'
+
 KeyNotGeneratedError = Class.new(StandardError)
 
 class Event < ApplicationRecord
   belongs_to :venue
 
+  validates :pretty_title, presence: true, spinal_case: true
   validate :validate_duration
 
   scope :upcoming, ->(now) { where("starts_at > ?", now) }
