@@ -23,7 +23,7 @@ body {
     margin: 0 auto;
     padding: 80px 0;
     
-    @media screen and (max-width: 680px) {
+    @media screen and (max-width: 479px) {
       width: 100%;
       padding: 40px 18px;
       box-sizing: border-box;
@@ -37,7 +37,7 @@ body {
     background-size: cover;
     background-position: center;
     background-image: image-url('sdev_logo_motion_image.gif');
-    @media screen and (max-width: 680px) { 
+    @media screen and (max-width: 479px) { 
       background-image: image-url('sdev_top_spw@3x.jpg');
     }
   }
@@ -47,7 +47,8 @@ body {
       @include font-60;
       text-align: center;
       line-height: 1.5;
-      @media screen and (max-width: 680px) {
+      padding-bottom: 30px;
+      @media screen and (max-width: 479px) {
         @include font-24;
       }
     }
@@ -55,8 +56,8 @@ body {
     p {
       @include font-20;
       line-height: 2.0;
-      padding: 40px 0;
-      @media screen and (max-width: 680px) {
+      padding: 10px 0;
+      @media screen and (max-width: 479px) {
         @include font-16;
       }
     }
@@ -66,7 +67,7 @@ body {
       padding: 30px;
       border-radius: 20px;
       margin-top: 40px;
-      @media screen and (max-width: 680px) {
+      @media screen and (max-width: 479px) {
         padding: 14px;
         border-radius: 10px;
       }
@@ -74,8 +75,8 @@ body {
       p {
         @include font-36;
         text-align: center;
-        padding-top:0;
-        @media screen and (max-width: 680px) {
+        padding: 0 0 40px 0;
+        @media screen and (max-width: 479px) {
           @include font-20;
         }
       }
@@ -87,7 +88,7 @@ body {
         @include font-24;
         font-weight: bold;
         margin-bottom: 25px;
-        @media screen and (max-width: 680px) {
+        @media screen and (max-width: 479px) {
           @include font-16;
         }
       }
@@ -96,7 +97,7 @@ body {
         @include font-16;
         padding: 0;
         text-align: left;
-        @media screen and (max-width: 680px) {
+        @media screen and (max-width: 479px) {
           @include font-14;
         }
       }
