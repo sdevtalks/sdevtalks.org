@@ -3,16 +3,16 @@
 
 
 nav {
-  width: 100%;
-  position: fixed;
+  width: 800px;
   height: 128px;
   background: linear-gradient(#1b1d28, rgba(27, 29, 40, 0.8) 19%, rgba(27, 29, 40, 0));
   box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.2);
-  padding: 0 10%;
+  margin: 0 auto;
+
   ul {
     display: flex;
     list-style: none;
-    
+
     li {
       font-family: 'Questrial', sans-serif;
       font-weight: bold;
@@ -23,14 +23,14 @@ nav {
         padding-left: 0;
       }
     }
-    
+
     a {
       text-decoration: none;
-      
+
       &:visited {
         color: $white;
       }
-      
+
       &:hover {
         color: $orange;
         text-shadow: -2px 0px 6px rgba(240, 139, 99, 0.6);
@@ -68,7 +68,7 @@ h2 {
   padding: 34px;
   border-radius: 20px;
   background-color: $background_color;
-  
+
   &_dateTag {
     background-color: $dark_blue;
     padding: 8px 8px;
@@ -80,7 +80,7 @@ h2 {
       @include font-14;
     }
   }
-  
+
   &_title {
     padding: 12px 0;
     h3 {
@@ -90,13 +90,13 @@ h2 {
   hr {
     margin: 30px 0;
   }
-  
+
   &_description {
     p {
       line-height: 2.0;
     }
   }
-  
+
   &_buttonWrapper {
     margin: 50px 0 36px 0;
     display: flex;
