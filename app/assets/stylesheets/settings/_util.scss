@@ -5,6 +5,7 @@
 nav {
   width: 100%;
   position: fixed;
+  z-index: 999;
   height: 128px;
   background: linear-gradient(#1b1d28, rgba(27, 29, 40, 0.8) 19%, rgba(27, 29, 40, 0));
   box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.2);
