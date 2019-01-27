@@ -4,26 +4,27 @@
 
   .wrapper
 
-    - if @upcoming_event
-      %h2 Upcoming Event
+    - unless @upcoming_events.empty?
+      %h2= @upcoming_events.size == 1 ? "Upcoming Event" : "Upcoming Events"
 
-      .eventCard
-        = image_tag "sdev_banner@3x.jpg", width: "100%"
-        .eventCard_dateTag
-          %p= @upcoming_event.formatted_opening_date
-        .eventCard_title
-          %h3= @upcoming_event.full_title
-        .eventCard_place
-          %p= "in #{@upcoming_event.venue.name}"
-        %hr
-        .eventCard_description
-          %p= @upcoming_event.description
+      - @upcoming_events.each do |event|
+        .eventCard
+          = image_tag "sdev_banner@3x.jpg", width: "100%"
+          .eventCard_dateTag
+            %p= event.formatted_opening_date
+          .eventCard_title
+            %h3= event.full_title
+          .eventCard_place
+            %p= "in #{event.venue.name}"
+          %hr
+          .eventCard_description
+            %p= event.description
 
-        .eventCard_buttonWrapper
-          =link_to "イベントを確認する", 'https://s-dev-talks.connpass.com/event/118037/', class: 'button_outline'
-          =link_to "登壇を希望する", 'https://docs.google.com/forms/d/e/1FAIpQLSf5upwTG8RPt4t0jai3cuESdpgoOJldzUWW4SkI6qHB5Ay_zg/viewform', class: 'button_filled'
+          .eventCard_buttonWrapper
+            =link_to "イベントを確認する", 'https://s-dev-talks.connpass.com/event/118037/', class: 'button_outline'
+            =link_to "登壇を希望する", 'https://docs.google.com/forms/d/e/1FAIpQLSf5upwTG8RPt4t0jai3cuESdpgoOJldzUWW4SkI6qHB5Ay_zg/viewform', class: 'button_filled'
 
-      .space_box
+        .space_box
 
     %h2 About
 

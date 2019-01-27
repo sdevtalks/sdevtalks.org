@@ -3,7 +3,8 @@ KeyNotGeneratedError = Class.new(StandardError)
 class Event < ApplicationRecord
   belongs_to :venue
 
-  scope :upcoming, ->(now) { where("starts_at > ?", now).order(starts_at: :asc) }
+  scope :upcoming, ->(now) { where("starts_at > ?", now) }
+  scope :recently, -> { order(starts_at: :asc) }
 
   def self.create_with_key!(*args)
     instance = self.new(*args)
