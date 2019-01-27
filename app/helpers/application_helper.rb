@@ -3,6 +3,7 @@ module ApplicationHelper
     {
       site: "s-dev talks",
       description: "s-dev talks は、サービスづくりに関わる人々が「エンジニア」や「デザイナー」といった職種 にとらわれず、「サービス開発者」として交流するための草の根コミュニティです。",
+      reverse: true,
       og: {
         site_name: "s-dev talks",
         description: "s-dev talks は、サービスづくりに関わる人々が「エンジニア」や「デザイナー」といった職種 にとらわれず、「サービス開発者」として交流するための草の根コミュニティです。",
