@@ -58,3 +58,4 @@
     %h2 Access
     .access_place
       %p= "場所： #{@event.venue.name}"
+      -#%p= link_to @event.venue.address, @event.venue.google_maps_url, target: :_blank
