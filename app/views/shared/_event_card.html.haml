@@ -1,0 +1,16 @@
+-# @param event [Event]
+
+.eventCard
+  = image_tag "sdev_ogp@3x.jpg", width: "100%"
+  .eventCard_dateTag
+    %p= event.formatted_opening_date
+  .eventCard_title
+    %h3= event.full_title
+  .eventCard_place
+    %p= "in #{event.venue.name}"
+  %hr
+  .eventCard_description
+    %p= event.description
+
+  .eventCard_buttonWrapper
+    = link_to "イベントを確認する", event_path(slug: event.slug), class: "button_outline"

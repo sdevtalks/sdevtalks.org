@@ -3,19 +3,4 @@
   .wrapper
     %h2 Events
     - @events.each do |event|
-      .eventCard
-        = image_tag "sdev_ogp@3x.jpg", width: "100%"
-        .eventCard_dateTag
-          %p= event.formatted_opening_date
-        .eventCard_title
-          %h3= event.full_title
-        .eventCard_place
-          %p= "in #{event.venue.name}"
-        %hr
-        .eventCard_description
-          %p= event.description
-        .eventCard_buttonWrapper
-          = link_to "イベントを確認する", event_path(slug: event.slug), class: "button_outline", target: :_blank
-          - unless event.ended?
-            = link_to "登壇を希望する", 'https://docs.google.com/forms/d/e/1FAIpQLSf5upwTG8RPt4t0jai3cuESdpgoOJldzUWW4SkI6qHB5Ay_zg/viewform', class: 'button_filled', target: :_blank
-
+      = render 'shared/event_card', event: event
