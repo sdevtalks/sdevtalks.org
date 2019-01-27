@@ -37,6 +37,9 @@ body {
     background-size: cover;
     background-position: center;
     background-image: image-url('sdev_logo_motion_image.gif');
+    @media screen and (max-width: 680px) { 
+      background-image: image-url('sdev_top_spw@3x.jpg');
+    }
   }
   
   .vision{
