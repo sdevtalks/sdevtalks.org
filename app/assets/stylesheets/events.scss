@@ -1,7 +1,12 @@
 .events_controller {
   .wrapper {
     width: 800px;
-    margin: 0 auto; 
+    margin: 0 auto;
+    @media screen and (max-width: 680px) {
+      width: 100%;
+      padding: 40px 18px;
+      box-sizing: border-box;
+    } 
   }
   
   .eventCard {
