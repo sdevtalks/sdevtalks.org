@@ -7,10 +7,14 @@ class EventsController < ApplicationController
   end
 
   def show
-    pretty_title = params[:slug].split("-")[0..-2].join("-")
-    key          = params[:slug].split("-").last
+    key = params[:slug].split("-").last
 
-    @event = Event.find_by!(pretty_title: pretty_title, key: key)
+    @event = Event.find_by!(key: key)
+
+    if params[:slug] != @event.slug
+      redirect_to event_path(@event.slug), status: 301 # Moved Permanently
+    end
+
     @page_title = @event.title
   end
 end
