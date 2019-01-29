@@ -19,7 +19,12 @@ class Event < ApplicationRecord
   end
 
   def generate_key
-    self.key = SecureRandom.alphanumeric(6)
+    new_key = SecureRandom.alphanumeric(6)
+    if Event.exists?(key: new_key)
+      generate_key
+    else
+      self.key = new_key
+    end
   end
 
   def ended?
