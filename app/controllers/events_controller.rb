@@ -11,8 +11,8 @@ class EventsController < ApplicationController
 
     @event = Event.find_by!(key: key)
 
-    if params[:slug] != @event.slug
-      redirect_to event_path(@event.slug), status: 301 # Moved Permanently
+    unless params[:slug] == @event.slug
+      redirect_to event_path(@event.slug), status: 301
     end
 
     @page_title = @event.title
