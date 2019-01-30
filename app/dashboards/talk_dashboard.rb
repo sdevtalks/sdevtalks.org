@@ -31,10 +31,13 @@ class TalkDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
+    :id,
     :event,
+    :title,
+    :speaker_name,
+    :speaker_sns_id,
     # :proposals_to_talk,
     # :proposal,
-    :id,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
