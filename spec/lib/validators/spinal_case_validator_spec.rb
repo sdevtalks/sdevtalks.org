@@ -12,35 +12,21 @@ RSpec.describe SpinalCaseValidator do
     end
 
     context 'valid format' do
-      valid_strings = %w[
-        a
-        1
-        a-1b
-        abc-123-d
-      ]
-
-      valid_strings.each do |valid_string|
-        it "#{valid_string} should be valid" do
-          obj = model_class.new(valid_string)
-          expect(obj).to be_valid
-        end
+      it 'should be valid' do
+        expect(model_class.new('a')).to be_valid
+        expect(model_class.new('1')).to be_valid
+        expect(model_class.new('a-1b')).to be_valid
+        expect(model_class.new('abc-123-d')).to be_valid
       end
     end
 
     context 'invalid format' do
-      invalid_strings = %w[
-        -
-        a-
-        -1
-        a--1
-        A
-      ]
-
-      invalid_strings.each do |invalid_string|
-        it "#{invalid_string} should not be valid" do
-          obj = model_class.new(invalid_string)
-          expect(obj).not_to be_valid
-        end
+      it 'should not be valid' do
+        expect(model_class.new('-')).not_to be_valid
+        expect(model_class.new('a-')).not_to be_valid
+        expect(model_class.new('-1')).not_to be_valid
+        expect(model_class.new('a--1')).not_to be_valid
+        expect(model_class.new('A')).not_to be_valid
       end
     end
 
@@ -53,8 +39,7 @@ RSpec.describe SpinalCaseValidator do
       end
 
       it 'blank string should be valid' do
-        obj = model_class_allowing_blank.new('')
-        expect(obj).to be_valid
+        expect(model_class_allowing_blank.new('')).to be_valid
       end
     end
   end
