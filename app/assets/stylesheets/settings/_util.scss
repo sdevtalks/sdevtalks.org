@@ -13,7 +13,7 @@ nav {
   ul {
     display: flex;
     list-style: none;
-    
+
     li {
       font-family: 'Questrial', sans-serif;
       font-weight: bold;
@@ -23,25 +23,25 @@ nav {
       &:first-child {
         padding-left: 0;
       }
-      
+
       @media screen and (max-width: 479px) {
         padding-left: 30px;
       }
     }
-    
+
     a {
       text-decoration: none;
       color: $white;
-      
+
       &:visited {
         color: $white;
       }
-      
+
       &:hover {
         color: $orange;
         text-shadow: -2px 0px 6px rgba(240, 139, 99, 0.6);
       }
-      
+
       img {
         padding-top: 40px;
       }
@@ -94,7 +94,7 @@ h2 {
     padding: 14px;
     border-radius: 10px;
   }
-  
+
   &_dateTag {
     background-color: $dark_blue;
     padding: 8px 8px;
@@ -110,7 +110,7 @@ h2 {
       }
     }
   }
-  
+
   &_title {
     padding: 12px 0;
     h3 {
@@ -121,7 +121,7 @@ h2 {
       }
     }
   }
-  
+
   &_place {
     @media screen and (max-width: 479px) {
       @include font-14;
@@ -132,7 +132,7 @@ h2 {
   hr {
     margin: 30px 0;
   }
-  
+
   &_description {
     p {
       line-height: 2.0;
@@ -142,7 +142,7 @@ h2 {
       }
     }
   }
-  
+
   &_buttonWrapper {
     margin: 50px 0 36px 0;
     display: flex;
@@ -180,6 +180,23 @@ h2 {
   text-decoration: none;
   text-align: center;
   box-shadow: 0px 4px 0px rgba(240, 139, 99, 0.5);
+  border-radius: 10px;
+  @media screen and (max-width: 479px) {
+    margin: 0 auto;
+    display: block;
+    margin-top: 30px;
+  }
+}
+
+.button_filled_with_shadow_unclickable {
+  display: inline-block;
+  background-color: $gray;
+  padding: 24px 60px;
+  color: $white;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
   border-radius: 10px;
   @media screen and (max-width: 479px) {
     margin: 0 auto;
