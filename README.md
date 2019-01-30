@@ -1,24 +1,15 @@
-# README
+# sdevtalks.org
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
 
-Things you may want to cover:
+```sh
+bundle install
+bin/rake db:create
+bin/rake ridgepole:apply
+```
 
-* Ruby version
+## Run Server
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```sh
+bin/rails server
+```
