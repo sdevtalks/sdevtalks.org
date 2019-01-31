@@ -21,44 +21,65 @@
             = link_to "イベントに参加する", 'https://s-dev-talks.connpass.com/event/118037/', class: 'button_filled_with_shadow'
             %p ※connpassへ遷移します
 
-  .showEvents_container
-    %h2 Main Talks
-    - if @event.ended?
-      .after_maintalks_wrapper
-        %p 間もなく資料公開予定
-    - else
-      .comingsoon_maintalks_wrapper
-        %p Coming Soon...
-    -# .before_maintalks_wrapper
-    -#   %ul
-    -#     %li
-    -#       .mainSpeaker_title
-    -#         %p 共創ワークショップを実践してわかった仮説の立て方
-    -#       .mainSpeaker_bio
-    -#         %p 株式会社マネーフォワード　Money Forward X本部 UXデザイナー
-    -#       .mainSpeaker_name
-    -#         %p 佐々木 俊弥(@toshiyassk)
-    -#       .mainSpeaker_desc
-    -#         %p クライアントとの共創によってユーザー中心のサービスを開発するための基本となるメソッド（Money Forward Service Design）を使いながら、ワークショップを実践してきた経験からわかった仮説の立て方について発表します。
-    -#     %li
-    -#       .mainSpeaker_title
-    -#         %p ユーザーを中心にした仮説のつくりかた
-    -#       .mainSpeaker_bio
-    -#         %p 株式会社alma　プロダクトマネージャー/エンジニア
-    -#       .mainSpeaker_name
-    -#         %p 加藤 健路(@slum_danker)
-    -#       .mainSpeaker_desc
-    -#         %p プロダクトのアイデアを出し、リリースするまでの流れにおいて、どのように仮説を立てるとよかったのか、自分でサービスを複数つくった事例（Cocoda!や週末でつくっているプロダクト）を交えながら、アンチパターンやグッドパターンを赤裸々に話していきたいと思ってます
-    -#     %li
-    -#       .mainSpeaker_title
-    -#         %p WEBサービス開発における仮説思考のための道具
-    -#       .mainSpeaker_bio
-    -#         %p ユアマイスター株式会社  CTO
-    -#       .mainSpeaker_name
-    -#         %p 星 永亮(@inase17000)
-    -#       .mainSpeaker_desc
-    -#         %p 書籍「仮説思考」から得た考え方の紹介、案件の起案時にエンジニアとディレクターが心がけていること、仮説を立てる時に煮詰まったら、こんな風に考えてみては？
+  .eventContents_wrapper
+    .showEvents_container
+      %h2 Main Talks
+      - if @event.ended?
+        .after_maintalks_wrapper
+          %p 間もなく資料公開予定
+      - else
+        .comingsoon_maintalks_wrapper
+          %p Coming Soon...
+      -# .before_maintalks_wrapper
+      -#   %ul
+      -#     %li
+      -#       .mainSpeaker_title
+      -#         %p 共創ワークショップを実践してわかった仮説の立て方
+      -#       .mainSpeaker_bio
+      -#         %p 株式会社マネーフォワード　Money Forward X本部 UXデザイナー
+      -#       .mainSpeaker_name
+      -#         %p 佐々木 俊弥(@toshiyassk)
+      -#       .mainSpeaker_desc
+      -#         %p クライアントとの共創によってユーザー中心のサービスを開発するための基本となるメソッド（Money Forward Service Design）を使いながら、ワークショップを実践してきた経験からわかった仮説の立て方について発表します。
+      -#     %li
+      -#       .mainSpeaker_title
+      -#         %p ユーザーを中心にした仮説のつくりかた
+      -#       .mainSpeaker_bio
+      -#         %p 株式会社alma　プロダクトマネージャー/エンジニア
+      -#       .mainSpeaker_name
+      -#         %p 加藤 健路(@slum_danker)
+      -#       .mainSpeaker_desc
+      -#         %p プロダクトのアイデアを出し、リリースするまでの流れにおいて、どのように仮説を立てるとよかったのか、自分でサービスを複数つくった事例（Cocoda!や週末でつくっているプロダクト）を交えながら、アンチパターンやグッドパターンを赤裸々に話していきたいと思ってます
+      -#     %li
+      -#       .mainSpeaker_title
+      -#         %p WEBサービス開発における仮説思考のための道具
+      -#       .mainSpeaker_bio
+      -#         %p ユアマイスター株式会社  CTO
+      -#       .mainSpeaker_name
+      -#         %p 星 永亮(@inase17000)
+      -#       .mainSpeaker_desc
+      -#         %p 書籍「仮説思考」から得た考え方の紹介、案件の起案時にエンジニアとディレクターが心がけていること、仮説を立てる時に煮詰まったら、こんな風に考えてみては？
 
-    %h2 Access
-    .access_place
-      %p= "場所： #{@event.venue.name}"
+      %h2 Access
+      .access_place
+        %p= "場所： #{@event.venue.name}"
+      .access_address
+        = simple_format @event.venue.address
+      .access_route
+        %p
+        = simple_format @event.venue.description
+      -# Venue don't have google_maps_url and google_maps_embed_url yet.
+        .access_button
+          - google_maps_url = 'https://goo.gl/maps/E9cvnrgGTD82'
+          =link_to 'Google Maps で開く', google_maps_url, class: 'button_googlemap', target:'_blank'
+        .access_map
+          - google_maps_embed_url = "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3242.4106062544242!2d139.7112813155217!3d35.64225398020354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z5p2x5Lqs6YO95riL6LC35Yy65oG15q-U5a-_NC0yMC0zIOaBteavlOWvv-OCrOODvOODh-ODs-ODl-ODrOOCpOOCueOCv-ODr-ODvDbpmo4!5e0!3m2!1sja!2sjp!4v1548857064435"
+          %iframe{ src: google_maps_embed_url, width: "100%", height: "100%", frameborder: 0, style: "border:0", allowfullscreen: true }
+
+      .eventTopics_apply
+        - if @event.ended?
+          .button_filled_with_shadow_unclickable
+            イベントは終了しました
+        - else
+          = link_to "イベントに参加する", 'https://s-dev-talks.connpass.com/event/118037/', class: 'button_filled_with_shadow'
+          %p ※connpassへ遷移します

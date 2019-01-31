@@ -10,7 +10,7 @@ class VenueDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     name: Field::String,
-    address: Field::String,
+    address: Field::Text,
     description: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
