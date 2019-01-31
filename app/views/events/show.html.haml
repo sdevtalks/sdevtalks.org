@@ -64,7 +64,7 @@
       .access_place
         %p= "場所： #{@event.venue.name}"
       .access_address
-        = simple_format @event.venue.address_with_line_break
+        = simple_format @event.venue.address
       .access_route
         %p
         = simple_format @event.venue.description
