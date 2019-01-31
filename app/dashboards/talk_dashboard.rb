@@ -21,6 +21,7 @@ class TalkDashboard < Administrate::BaseDashboard
     speaker_role: Field::String,
     slide_url: Field::String,
     video_url: Field::String,
+    description: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -56,6 +57,7 @@ class TalkDashboard < Administrate::BaseDashboard
     :speaker_role,
     :slide_url,
     :video_url,
+    :description,
     :created_at,
     :updated_at,
   ].freeze
@@ -76,6 +78,7 @@ class TalkDashboard < Administrate::BaseDashboard
     :speaker_role,
     :slide_url,
     :video_url,
+    :description,
   ].freeze
 
   # Overwrite this method to customize how talks are displayed
