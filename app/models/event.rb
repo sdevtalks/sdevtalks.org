@@ -46,6 +46,10 @@ class Event < ApplicationRecord
 
   private
 
+  def duration
+    self.ends_at - self.starts_at
+  end
+
   def validate_duration
     if duration <= 0
       errors[:base] << "end_at must be greater than start_at"
