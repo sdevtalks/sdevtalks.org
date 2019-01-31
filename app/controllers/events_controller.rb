@@ -15,6 +15,7 @@ class EventsController < ApplicationController
       redirect_to event_path(@event.slug), status: 301
     end
 
+    @venue = @event.venue
     @page_title = @event.title
   end
 end
