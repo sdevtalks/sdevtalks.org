@@ -3,6 +3,8 @@ require 'validators/spinal_case_validator'
 KeyNotGeneratedError = Class.new(StandardError)
 
 class Event < ApplicationRecord
+  has_many :talks
+  has_many :proposals
   belongs_to :venue
 
   validates :pretty_title, presence: true, spinal_case: true
