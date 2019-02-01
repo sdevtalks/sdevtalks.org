@@ -12,6 +12,8 @@ class VenueDashboard < Administrate::BaseDashboard
     name: Field::String,
     address: Field::Text,
     description: Field::Text,
+    google_maps_url: Field::Text,
+    google_maps_embed_url: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -35,6 +37,8 @@ class VenueDashboard < Administrate::BaseDashboard
     :name,
     :address,
     :description,
+    :google_maps_url,
+    :google_maps_embed_url,
     :created_at,
     :updated_at,
   ].freeze
@@ -46,6 +50,8 @@ class VenueDashboard < Administrate::BaseDashboard
     :name,
     :address,
     :description,
+    :google_maps_url,
+    :google_maps_embed_url,
   ].freeze
 
   # Overwrite this method to customize how venues are displayed
