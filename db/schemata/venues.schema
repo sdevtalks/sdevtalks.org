@@ -2,8 +2,8 @@ create_table "venues", force: :cascade do |t|
   t.string "name",    null: false
   t.string "address", null: false
   t.text   "description", null: false
-  t.text   "google_maps_url", null: false, default: '' # Remove default after data migration
-  t.text   "google_maps_embed_url", null: false, default: '' # Remove default after data migration
+  t.text   "google_maps_url", null: false
+  t.text   "google_maps_embed_url", null: false
 
   t.timestamps
 end
