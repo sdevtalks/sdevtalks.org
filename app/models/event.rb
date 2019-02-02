@@ -5,8 +5,15 @@ KeyNotGeneratedError = Class.new(StandardError)
 class Event < ApplicationRecord
   belongs_to :venue
 
-  validates :pretty_title, presence: true, spinal_case: true
-  validate :validate_duration
+  validates :title,        presence: true
+  validates :description,  presence: true
+  validates :pretty_title, presence: true, uniqueness: true, spinal_case: true
+  validates :key,          presence: true, uniqueness: true
+  validates :venue_id,     presence: true
+  validates :starts_at,    presence: true
+  validates :ends_at,      presence: true
+  validate :validate_duration,
+    if: Proc.new { |record| record.errors['starts_at'].empty? && record.errors['ends_at'].empty? }
 
   scope :upcoming, ->(now) { where("starts_at > ?", now) }
   scope :recently, -> { order(starts_at: :asc) }
