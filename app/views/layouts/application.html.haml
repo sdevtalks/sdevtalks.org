@@ -15,8 +15,8 @@
   %body{class: "#{controller_name}_controller"}
     %nav
       %ul
-        %li=link_to "About", '/'
-        %li=link_to "Events", '/events'
+        %li=link_to "About", '/', class: (controller_name == 'top' ? 'active' : nil)
+        %li=link_to "Events", '/events', class: (controller_name == 'events' ? 'active' : nil)
         %li=link_to image_tag('twitter.png', width:40), 'https://twitter.com/sdevtalks', target:'_blank'
 
     = yield
