@@ -9,7 +9,7 @@ class EventsController < ApplicationController
   def show
     key = params[:slug].split("-").last
 
-    @event = Event.find_by!(key: key)
+    @event = Event.eager_load(:talks, :proposals, :venue).find_by!(key: key)
 
     unless params[:slug] == @event.slug
       redirect_to event_path(@event.slug), status: 301

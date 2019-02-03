@@ -24,41 +24,37 @@
   .eventContents_wrapper
     .showEvents_container
       %h2 Main Talks
-      - if @event.ended?
-        .after_maintalks_wrapper
-          %p 間もなく資料公開予定
+      - if @event.talks.present?
+        .before_maintalks_wrapper
+          %ul
+            - @event.talks.each do |talk|
+              %li
+                .mainSpeaker_title
+                  %p= talk.title
+                .mainSpeaker_bio
+                  %p
+                    = talk.speaker_belongs
+                    = talk.speaker_role
+                .mainSpeaker_name
+                  - if talk.speaker_sns_id.present? && talk.speaker_sns_url.present?
+                    %p
+                      = talk.speaker_name
+                      = link_to "(#{talk.speaker_sns_id})", talk.speaker_sns_url, style: "color: #fff"
+                .mainSpeaker_desc
+                  %p= simple_format(talk.description)
       - else
-        .comingsoon_maintalks_wrapper
-          %p Coming Soon...
-      -# .before_maintalks_wrapper
-      -#   %ul
-      -#     %li
-      -#       .mainSpeaker_title
-      -#         %p 共創ワークショップを実践してわかった仮説の立て方
-      -#       .mainSpeaker_bio
-      -#         %p 株式会社マネーフォワード　Money Forward X本部 UXデザイナー
-      -#       .mainSpeaker_name
-      -#         %p 佐々木 俊弥(@toshiyassk)
-      -#       .mainSpeaker_desc
-      -#         %p クライアントとの共創によってユーザー中心のサービスを開発するための基本となるメソッド（Money Forward Service Design）を使いながら、ワークショップを実践してきた経験からわかった仮説の立て方について発表します。
-      -#     %li
-      -#       .mainSpeaker_title
-      -#         %p ユーザーを中心にした仮説のつくりかた
-      -#       .mainSpeaker_bio
-      -#         %p 株式会社alma　プロダクトマネージャー/エンジニア
-      -#       .mainSpeaker_name
-      -#         %p 加藤 健路(@slum_danker)
-      -#       .mainSpeaker_desc
-      -#         %p プロダクトのアイデアを出し、リリースするまでの流れにおいて、どのように仮説を立てるとよかったのか、自分でサービスを複数つくった事例（Cocoda!や週末でつくっているプロダクト）を交えながら、アンチパターンやグッドパターンを赤裸々に話していきたいと思ってます
-      -#     %li
-      -#       .mainSpeaker_title
-      -#         %p WEBサービス開発における仮説思考のための道具
-      -#       .mainSpeaker_bio
-      -#         %p ユアマイスター株式会社  CTO
-      -#       .mainSpeaker_name
-      -#         %p 星 永亮(@inase17000)
-      -#       .mainSpeaker_desc
-      -#         %p 書籍「仮説思考」から得た考え方の紹介、案件の起案時にエンジニアとディレクターが心がけていること、仮説を立てる時に煮詰まったら、こんな風に考えてみては？
+        - if @event.ended?
+          .after_maintalks_wrapper
+            -# 現状LT大会のみここに入る
+            %p 間もなく資料公開予定
+        - else
+          - if @event.proposals.present?
+            -# proposalがあったらここ
+            .comingsoon_maintalks_wrapper
+              %p Coming Soon...
+          - else
+            .comingsoon_maintalks_wrapper
+              %p Coming Soon...
 
       %h2 Access
       .access_place
