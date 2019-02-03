@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "/events", to: "events#index"
   get "/events/:slug", to: "events#show", as: "event"
 
+  get "/logos", to: "logos#index"
+
   get "/sitemap", to: "sitemaps#index"
 
   #
