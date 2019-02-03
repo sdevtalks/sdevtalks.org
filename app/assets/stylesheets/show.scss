@@ -50,7 +50,7 @@
 
     &_title {
       @include font-24;
-      line-height: 1.4px;
+      line-height: 1.4;
       @media screen and (max-width: 479px) {
         @include font-18;
         line-height: 1.7;
