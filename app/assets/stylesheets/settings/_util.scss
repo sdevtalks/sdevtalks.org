@@ -29,12 +29,25 @@ nav {
       }
     }
 
+
     a {
       text-decoration: none;
       color: $white;
+      &.active {
+        color: $orange;
+        position: relative;
+        text-shadow: -2px 0px 6px rgba(240, 139, 99, 0.6);
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            border: 1px solid $orange;
+            border-radius: 50px;
+            box-shadow: -2px 0px 6px rgba(240, 139, 99, 0.6);
+            bottom: -14px;
+          }
 
-      &:visited {
-        color: $white;
       }
 
       &:hover {
@@ -115,6 +128,7 @@ h2 {
     padding: 12px 0;
     h3 {
       @include font-24;
+      line-height: 1.4;
       @media screen and (max-width: 479px) {
         @include font-20;
         line-height: 1.4;
@@ -173,7 +187,7 @@ h2 {
 .button_filled_with_shadow {
   display: inline-block;
   background-color: $orange;
-  padding: 24px 60px;
+  padding: 24px 60px 24px 30px;
   color: $white;
   border-radius: 10px;
   font-weight: bold;
@@ -232,7 +246,7 @@ h2 {
 .button_googlemap {
   display: inline-block;
   background-color: $dark_blue;
-  padding: 24px 60px;
+  padding: 24px 60px 24px 30px;
   color: $white;
   border-radius: 10px;
   font-weight: bold;
