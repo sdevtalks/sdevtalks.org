@@ -11,6 +11,10 @@ class Event < ApplicationRecord
   scope :upcoming, ->(now) { where("starts_at > ?", now) }
   scope :recently, -> { order(starts_at: :asc) }
 
+  # This callback is added for administrate and will be removed in the near future.
+  # You should use create_with_key in application code.
+  before_validation :set_key
+
   def self.create_with_key!(*args)
     instance = self.new(*args)
     instance.generate_key
@@ -58,5 +62,9 @@ class Event < ApplicationRecord
     if duration > 24.hours
       errors[:base] << "Too long event. Everyone will be exhausted."
     end
+  end
+
+  def set_key
+    self.key ||= generate_key
   end
 end
