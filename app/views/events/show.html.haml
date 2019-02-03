@@ -20,6 +20,7 @@
           - else
             = link_to "イベントに参加する", 'https://s-dev-talks.connpass.com/event/118037/', class: 'button_filled_with_shadow'
             %p ※connpassへ遷移します
+  .space_box
 
   .eventContents_wrapper
     .showEvents_container
@@ -28,20 +29,24 @@
         .before_maintalks_wrapper
           %ul
             - @event.talks.each do |talk|
-              %li
-                .mainSpeaker_title
-                  %p= talk.title
-                .mainSpeaker_bio
-                  %p
-                    = talk.speaker_belongs
-                    = talk.speaker_role
-                .mainSpeaker_name
-                  - if talk.speaker_sns_id.present? && talk.speaker_sns_url.present?
+              %li.mainSpeaker_contentWrapper
+                .mainSpeaker_avator
+                  =image_tag 'profile_icon_placeholder.png'
+                .mainSpeaker_content
+                  .mainSpeaker_title
+                    %p= talk.title
+                  .mainSpeaker_bio
                     %p
-                      = talk.speaker_name
-                      = link_to "(#{talk.speaker_sns_id})", talk.speaker_sns_url, style: "color: #fff"
-                .mainSpeaker_desc
-                  %p= simple_format(talk.description)
+                      = talk.speaker_belongs
+                      = talk.speaker_role
+                  .mainSpeaker_name
+                    - if talk.speaker_sns_id.present? && talk.speaker_sns_url.present?
+                      %p
+                        = talk.speaker_name
+                        = link_to "(#{talk.speaker_sns_id})", talk.speaker_sns_url
+                  %hr.mainSpeaker_hr
+                  .mainSpeaker_desc
+                    %p= simple_format(talk.description)
       - else
         - if @event.ended?
           .after_maintalks_wrapper
@@ -55,6 +60,8 @@
           - else
             .comingsoon_maintalks_wrapper
               %p Coming Soon...
+
+      .space_box
 
       %h2 Access
       .access_place
