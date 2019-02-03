@@ -8,9 +8,10 @@ class EventDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    venue: Field::BelongsTo,
     id: Field::Number,
+    venue: Field::BelongsTo,
     title: Field::String,
+    pretty_title: Field::String,
     description: Field::Text,
     starts_at: Field::DateTime,
     ends_at: Field::DateTime,
@@ -26,15 +27,17 @@ class EventDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :title,
+    :pretty_title,
     :venue,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :venue,
     :id,
+    :venue,
     :title,
+    :pretty_title,
     :description,
     :starts_at,
     :ends_at,
@@ -48,6 +51,7 @@ class EventDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :venue,
     :title,
+    :pretty_title,
     :description,
     :starts_at,
     :ends_at,
