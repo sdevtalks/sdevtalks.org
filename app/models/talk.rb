@@ -4,7 +4,7 @@ class Talk < ApplicationRecord
   has_one :proposal, through: :proposals_to_talk
 
   validates :title,         presence: true
-  validates :description,   presence: true
+  validates :description,   presence: true, allow_blank: true
   validates :event_id,      presence: true
   validates :speaker_name,  presence: true
   validates :speaker_email, presence: true
