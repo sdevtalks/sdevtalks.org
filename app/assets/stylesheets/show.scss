@@ -150,32 +150,18 @@
     }
 
     .mainSpeaker {
-      &_contentWrapper {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      &_avator {
-        img {
-          width: 210px;
-          border: 1px solid #696652;
-        }
-        @media screen and (max-width: 479px) {
-          text-align: center;
-          margin-bottom: 20px;
-          img {
-            width: 100%;
-          }
-        }
-      }
+      //スライドのサムネイル表示するときに使うので残しておきます。
+      // &_contentWrapper {
+      //   display: flex;
+      //   flex-wrap: wrap;
+      //   justify-content: center;
+      // }
 
       &_content {
-        width: 690px;
-        margin-left:60px;
+        width: 600px;
+        margin: 0 auto;
         @media screen and (max-width: 479px) {
           width: 100%;
-          margin-left: 0;
         }
       }
 
@@ -194,7 +180,7 @@
         @media screen and (max-width: 479px) {
           @include font-12;
           line-height: 1.4;
-          padding: 10px 0 10px 0;
+          padding: 10px 0 4px 0;
         }
       }
 
@@ -204,10 +190,40 @@
         border: 2px solid $orange;
         text-shadow: -2px 0px 6px rgba(240, 139, 99, 0.6);
         border-radius: 50px;
+        @media screen and (max-width: 479px) {
+          width: 30%;
+          border: 1px solid $orange;
+        }
+      }
+
+      &_nameContainer {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      &_avator {
+        img {
+          width: 40px;
+          border: 1px solid #696652;
+          border-radius: 50%;
+        }
+        @media screen and (max-width: 479px) {
+          text-align: center;
+          img {
+            width: 30px;
+          }
+        }
       }
 
       &_name {
         @include font-18;
+        line-height: 40px;
+        padding-left: 12px;
+
+        @media screen and (max-width: 479px) {
+          line-height: 30px;
+          @include font-14;
+        }
 
         a {
           color: $white;
@@ -224,8 +240,9 @@
         line-height: 1.8;
         padding-top: 10px;
         font-weight: lighter;
+        text-align: justify;
         @media screen and (max-width: 479px) {
-          line-height: 1.5;
+          line-height: 1.7;
           @include font-14;
         }
       }
