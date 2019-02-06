@@ -41,9 +41,9 @@
                     .mainSpeaker_avator
                       =image_tag 'profile_icon_placeholder.png'
                     .mainSpeaker_name
-                      - if talk.speaker_sns_id.present? && talk.speaker_sns_url.present?
-                        %p
-                          = talk.speaker_name
+                      %p
+                        = talk.speaker_name
+                        - if talk.speaker_sns_id.present? && talk.speaker_sns_url.present?
                           = link_to "(#{talk.speaker_sns_id})", talk.speaker_sns_url
                   %hr.mainSpeaker_hr
                   .mainSpeaker_desc
