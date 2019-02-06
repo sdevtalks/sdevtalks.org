@@ -168,6 +168,8 @@
       &_title {
         @include font-24;
         font-weight: bold;
+        line-height: 1.4;
+        text-align: justify;
         @media screen and (max-width: 479px) {
           @include font-20;
           line-height: 1.4;
