@@ -8,7 +8,7 @@ class Event < ApplicationRecord
   belongs_to :venue
 
   validates :title,        presence: true
-  validates :description,  presence: true
+  validates :description,  presence: true, allow_blank: true
   validates :pretty_title, presence: true, uniqueness: true, spinal_case: true
   validates :key,          presence: true, uniqueness: true
   validates :venue_id,     presence: true
