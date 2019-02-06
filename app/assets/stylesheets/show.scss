@@ -140,30 +140,111 @@
   .before_maintalks_wrapper {
     width: 980px;
     margin: 0 auto;
+    text-align: left;
+    @media screen and (max-width: 479px) {
+      width: 100%;
+    }
 
     li {
       margin-bottom: 60px;
     }
 
     .mainSpeaker {
+      //スライドのサムネイル表示するときに使うので残しておきます。
+      // &_contentWrapper {
+      //   display: flex;
+      //   flex-wrap: wrap;
+      //   justify-content: center;
+      // }
+
+      &_content {
+        width: 600px;
+        margin: 0 auto;
+        @media screen and (max-width: 479px) {
+          width: 100%;
+        }
+      }
+
       &_title {
         @include font-24;
         font-weight: bold;
+        @media screen and (max-width: 479px) {
+          @include font-20;
+          line-height: 1.4;
+        }
       }
 
       &_bio {
         @include font-14;
-        padding: 20px 0 10px 0;
+        padding: 20px 0 14px 0;
+        @media screen and (max-width: 479px) {
+          @include font-12;
+          line-height: 1.4;
+          padding: 10px 0 4px 0;
+        }
+      }
+
+      &_hr {
+        margin: 20px 0 10px 0;
+        width: 20%;
+        border: 2px solid $orange;
+        text-shadow: -2px 0px 6px rgba(240, 139, 99, 0.6);
+        border-radius: 50px;
+        @media screen and (max-width: 479px) {
+          width: 30%;
+          border: 1px solid $orange;
+        }
+      }
+
+      &_nameContainer {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      &_avator {
+        img {
+          width: 40px;
+          border: 1px solid #696652;
+          border-radius: 50%;
+        }
+        @media screen and (max-width: 479px) {
+          text-align: center;
+          img {
+            width: 30px;
+          }
+        }
       }
 
       &_name {
-        @include font-14;
+        @include font-18;
+        line-height: 40px;
+        padding-left: 12px;
+
+        @media screen and (max-width: 479px) {
+          line-height: 30px;
+          @include font-14;
+        }
+
+        a {
+          color: $white;
+          text-decoration: underline;
+          &:hover {
+            color: $orange;
+            text-shadow: -2px 0px 6px rgba(240, 139, 99, 0.6);
+          }
+        }
       }
 
       &_desc {
         @include font-16;
         line-height: 1.8;
-        padding-top: 20px;
+        padding-top: 10px;
+        font-weight: lighter;
+        text-align: justify;
+        @media screen and (max-width: 479px) {
+          line-height: 1.7;
+          @include font-14;
+        }
       }
     }
   }

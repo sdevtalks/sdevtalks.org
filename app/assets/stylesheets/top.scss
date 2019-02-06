@@ -22,14 +22,14 @@ body {
     width: 800px;
     margin: 0 auto;
     padding: 80px 0;
-    
+
     @media screen and (max-width: 479px) {
       width: 100%;
       padding: 40px 18px;
       box-sizing: border-box;
     }
-  }  
-  
+  }
+
   .topImage {
     width: 100vw;
     height: auto;
@@ -37,11 +37,11 @@ body {
     background-size: cover;
     background-position: center;
     background-image: image-url('sdev_logo_motion_image.gif');
-    @media screen and (max-width: 479px) { 
+    @media screen and (max-width: 479px) {
       background-image: image-url('sdev_top_spw@3x.jpg');
     }
   }
-  
+
   .vision{
     h1 {
       @include font-60;
@@ -52,16 +52,17 @@ body {
         @include font-24;
       }
     }
-    
+
     p {
       @include font-20;
       line-height: 2.0;
       padding: 10px 0;
+      text-align: justify;
       @media screen and (max-width: 479px) {
         @include font-16;
       }
     }
-    
+
     &_container {
       background-color: $background_color;
       padding: 30px;
@@ -71,7 +72,7 @@ body {
         padding: 14px;
         border-radius: 10px;
       }
-      
+
       p {
         @include font-36;
         text-align: center;
@@ -81,7 +82,7 @@ body {
         }
       }
     }
-    
+
     &_wrapper {
       margin-bottom: 40px;
       &_label {
@@ -92,18 +93,18 @@ body {
           @include font-16;
         }
       }
-      
+
       p {
         @include font-16;
         padding: 0;
-        text-align: left;
+        text-align: justify;
         @media screen and (max-width: 479px) {
           @include font-14;
         }
       }
     }
   }
-  
+
   .hashtag {
     text-align: center;
     &_label {
@@ -111,13 +112,13 @@ body {
       color: $blue;
       @include font-18;
     }
-    
+
     p {
       @include font-36;
       font-weight: bold;
       margin-top: 20px;
     }
-    
+
     ul {
       display: flex;
       justify-content: center;
