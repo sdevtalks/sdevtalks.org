@@ -18,17 +18,17 @@ namespace :db do
         config = YAML.load(result)
         raise if config["DATABASE_URL"].blank?
 
-        Rake::Task["db:drop"].invoke
-        Rake::Task["db:create"].invoke
-
         config["DATABASE_URL"]
       end
 
-    dump_file_name = "dump_#{Time.zone.now.to_i}.sql"
+    dump_file_name = "dump_#{Time.now.to_i}.sql"
     Open3.popen3("pg_dump #{database_url} > #{dump_file_name}") do |stdin, stdout, stderr|
       puts stderr.read
       puts stdout.read
     end
+
+    Rake::Task["db:drop"].invoke
+    Rake::Task["db:create"].invoke
 
     Open3.popen3("psql sdevtalks_org_development < #{dump_file_name}") do |stdin, stdout, stderr|
       puts stderr.read
