@@ -13,8 +13,7 @@ namespace :db do
       Open3.popen3("heroku config") do |stdin, stdout, stderr|
         puts stderr.read
 
-        result = stdout.read
-        result.gsub!("=== sdevtalks Config Vars\n", "")
+        result = stdout.each_line.to_a[1..-1].join
 
         config = YAML.load(result)
         raise if config["DATABASE_URL"].blank?
