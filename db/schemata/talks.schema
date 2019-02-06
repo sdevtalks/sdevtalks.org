@@ -10,6 +10,7 @@ create_table "talks", force: :cascade do |t|
   t.string  "slide_url"
   t.string  "video_url"
   t.text    "description", null: false
+  t.string  "secret_token" # Set NOT NULL after data migration
 
   t.timestamps
 end
