@@ -2,9 +2,17 @@
 
 require "open3"
 
-namespace :db do
-  desc "Re-create local db and import data from heroku"
-  task :restore do
+class DatabaseRestore
+  def run!
+    dump_file_name = dump
+
+    Rake::Task["db:drop"].invoke
+    Rake::Task["db:create"].invoke
+
+    restore(dump_file_name)
+  end
+
+  def dump
     Open3.popen3("heroku whoami") do |stdin, stdout, stderr|
       raise "not logged in" if stderr.read == "Error: not logged in"
     end
@@ -27,14 +35,22 @@ namespace :db do
       puts stdout.read
     end
 
-    Rake::Task["db:drop"].invoke
-    Rake::Task["db:create"].invoke
+    dump_file_name
+  end
 
+  def restore(dump_file_name)
     Open3.popen3("psql sdevtalks_org_development < #{dump_file_name}") do |stdin, stdout, stderr|
       puts stderr.read
       puts stdout.read
 
       FileUtils.rm(dump_file_name)
     end
+  end
+end
+
+namespace :db do
+  desc "Re-create local db and import data from heroku"
+  task :restore do
+    DatabaseRestore.new.run!
   end
 end
