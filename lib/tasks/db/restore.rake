@@ -29,7 +29,7 @@ class DatabaseRestore
         config["DATABASE_URL"]
       end
 
-    dump_file_name = "dump_#{Time.now.to_i}.sql"
+    dump_file_name = "tmp/dump_#{Time.now.to_i}.sql"
     Open3.popen3("pg_dump #{database_url} > #{dump_file_name}") do |stdin, stdout, stderr|
       puts stderr.read
       puts stdout.read
