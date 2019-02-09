@@ -22,7 +22,7 @@ class TalkDashboard < Administrate::BaseDashboard
     slide_url: Field::String,
     video_url: Field::String,
     description: Field::Text,
-    secret_url: Field::String,
+    secret_edit_path: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -59,7 +59,7 @@ class TalkDashboard < Administrate::BaseDashboard
     :slide_url,
     :video_url,
     :description,
-    :secret_url,
+    :secret_edit_path,
     :created_at,
     :updated_at,
   ].freeze

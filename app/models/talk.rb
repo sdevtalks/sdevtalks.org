@@ -11,8 +11,12 @@ class Talk < ApplicationRecord
 
   before_validation :set_secret_token
 
-  def secret_url
-    "https://sdevtalks.org/events/#{event.slug}/talks/#{id}/edit?secret_token=#{secret_token}"
+  # This kind of logic should not live in model layer.
+  # But because of convenience in administrate, this method lives here.
+  # @return [String, nil]
+  def secret_edit_path
+    return nil if new_record?
+    Rails.application.routes.url_helpers.edit_database_talk_path(self, secret_token: secret_token)
   end
 
   private
