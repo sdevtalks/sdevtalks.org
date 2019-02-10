@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root to: "top#index"
 
-  resources :events, param: :slug, only: %i[index show]
+  resources :events, param: :slug, only: %i[index show] do
+    resources :talks, only: %i[edit update]
+  end
 
   get "/sitemap", to: "sitemaps#index"
 
