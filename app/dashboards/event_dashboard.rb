@@ -13,6 +13,7 @@ class EventDashboard < Administrate::BaseDashboard
     title: Field::String,
     pretty_title: Field::String,
     description: Field::Text,
+    published: Field::Boolean,
     starts_at: Field::DateTime,
     ends_at: Field::DateTime,
     created_at: Field::DateTime,
@@ -28,6 +29,7 @@ class EventDashboard < Administrate::BaseDashboard
     :id,
     :title,
     :pretty_title,
+    :published,
     :venue,
   ].freeze
 
@@ -39,6 +41,7 @@ class EventDashboard < Administrate::BaseDashboard
     :title,
     :pretty_title,
     :description,
+    :published,
     :starts_at,
     :ends_at,
     :created_at,
@@ -53,6 +56,7 @@ class EventDashboard < Administrate::BaseDashboard
     :title,
     :pretty_title,
     :description,
+    :published,
     :starts_at,
     :ends_at,
   ].freeze

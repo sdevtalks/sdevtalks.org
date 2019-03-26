@@ -19,6 +19,7 @@ class Event < ApplicationRecord
 
   scope :upcoming, ->(now) { where("starts_at > ?", now) }
   scope :recently, -> { order(starts_at: :asc) }
+  scope :published, -> { where(published: true) }
 
   # This callback is added for administrate and will be removed in the near future.
   # You should use create_with_key in application code.

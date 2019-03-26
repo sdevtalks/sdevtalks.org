@@ -2,6 +2,6 @@
 
 class TopController < ApplicationController
   def index
-    @upcoming_events = Event.eager_load(:venue).upcoming(Time.zone.now).recently
+    @upcoming_events = Event.eager_load(:venue).published.upcoming(Time.zone.now).recently
   end
 end
