@@ -1,0 +1,44 @@
+%div{ style: 'padding-top: 100px; width: 800px; margin: 0 auto;' }
+  - if @talk.errors.any?
+    %ul
+      - @talk.errors.full_messages.each do |message|
+        %li{ style: 'color: red;' }= message
+
+  = form_for @talk, url: event_talk_path(event_slug: @talk.event.slug, id: @talk.id, secret_token: @talk.secret_token) do |f|
+    %h4 Speaker Info
+
+    = f.label :speaker_name
+    = f.text_field :speaker_name, class: 'form-control'
+
+    = f.label :speaker_email
+    = f.text_field :speaker_email
+
+    = f.label :speaker_sns_id
+    = f.text_field :speaker_sns_id
+
+    = f.label :speaker_sns_url
+    = f.text_field :speaker_sns_url
+
+    = f.label :speaker_belongs
+    = f.text_field :speaker_belongs
+
+    = f.label :speaker_role
+    = f.text_field :speaker_role
+
+    %h4 Talk Info
+
+    = f.label :title
+    = f.text_field :title
+
+    = f.label :description
+    = f.text_area :description
+
+    %h4 Materials
+
+    = f.label :slide_url
+    = f.text_field :slide_url
+
+    = f.label :video_url
+    = f.text_field :video_url
+
+    = f.submit 'Submit'

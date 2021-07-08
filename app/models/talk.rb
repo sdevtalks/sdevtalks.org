@@ -16,7 +16,7 @@ class Talk < ApplicationRecord
   # @return [String, nil]
   def secret_edit_path
     return nil if new_record?
-    Rails.application.routes.url_helpers.edit_database_talk_path(self, secret_token: secret_token)
+    Rails.application.routes.url_helpers.edit_event_talk_path(event_slug: event.slug, id: id, secret_token: secret_token)
   end
 
   private
